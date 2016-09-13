@@ -39,7 +39,6 @@ public class LinkedList implements List{
 	public Object get(int index) throws IndexOutOfBoundsException{
 		
 		checkOutOfBounds(index);
-		Element element = getElement(index);
 		return getElement(index).getValue();
 		
 	}
