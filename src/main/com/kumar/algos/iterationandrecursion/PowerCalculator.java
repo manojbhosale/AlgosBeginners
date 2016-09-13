@@ -22,5 +22,16 @@ public final class PowerCalculator {
 		return result;
 	}
 	
+	public int calculateRecursive(int base, int exponent){
+		assert exponent > 0: "Exponent should be > 0 !!";
+		
+		if(exponent == 0){
+			return 1;
+		}
+			
+		return base * calculateRecursive(base,--exponent);
+
+	}
+
 
 }
