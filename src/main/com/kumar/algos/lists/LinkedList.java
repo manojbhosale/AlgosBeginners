@@ -145,9 +145,7 @@ public class LinkedList implements List{
 			}
 			return _current.getValue();
 		}
-		
-		
-		
+				
 	}
 	
 	public Iterator iterator(){
@@ -231,9 +229,12 @@ public class LinkedList implements List{
 		// TODO Auto-generated method stub
 		checkOutOfBounds(index);
 		assert value != null: "Value can not be null";
-		Object val = get(index);
-		insert(index, value);
+		Element ele = getElement(index);
+		Object val = ele.getValue();
 		
+		ele.setValue(value);
+		//insert(index, value); //wrong logic in book. Did not work in bubble sorting code.
+		//_size--;
 		return val;
 	}
 
