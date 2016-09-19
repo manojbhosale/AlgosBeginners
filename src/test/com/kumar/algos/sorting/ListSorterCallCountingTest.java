@@ -1,8 +1,13 @@
-package main.com.kumar.algos.sorting;
+package test.com.kumar.algos.sorting;
 
 import junit.framework.TestCase;
 import main.com.kumar.algos.lists.ArrayList;
 import main.com.kumar.algos.lists.List;
+import main.com.kumar.algos.sorting.BubblesortListSorter;
+import main.com.kumar.algos.sorting.CallCountingComparator;
+import main.com.kumar.algos.sorting.InsertionSortListSorter;
+import main.com.kumar.algos.sorting.NaturalComparator;
+import main.com.kumar.algos.sorting.SelectionSortListSorter;
 
 public class ListSorterCallCountingTest  extends TestCase{
 

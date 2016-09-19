@@ -1,6 +1,9 @@
-package main.com.kumar.algos.sorting;
+package test.com.kumar.algos.sorting;
 
 import java.util.Comparator;
+
+import main.com.kumar.algos.sorting.BubblesortListSorter;
+import main.com.kumar.algos.sorting.ListSorter;
 
 public class BubblesortListSorterTest extends AbstractListSorterTest{
 

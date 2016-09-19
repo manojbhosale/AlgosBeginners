@@ -1,4 +1,4 @@
-package main.com.kumar.algos.sorting;
+package test.com.kumar.algos.sorting;
 
 import java.util.Comparator;
 
@@ -6,6 +6,8 @@ import junit.framework.TestCase;
 import main.com.kumar.algos.iterationandrecursion.Iterator;
 import main.com.kumar.algos.lists.LinkedList;
 import main.com.kumar.algos.lists.List;
+import main.com.kumar.algos.sorting.ListSorter;
+import main.com.kumar.algos.sorting.NaturalComparator;
 
 public abstract class AbstractListSorterTest extends TestCase{
 
