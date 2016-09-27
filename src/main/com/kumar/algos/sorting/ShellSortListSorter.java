@@ -4,12 +4,12 @@ import java.util.Comparator;
 
 import main.com.kumar.algos.lists.List;
 
-public class ShellSortListSorter implements ListSorter {
+public class ShellsortListSorter implements ListSorter {
 
 	private final Comparator _comparator;
 	private final int[] _increments = { 121, 40, 13, 4, 1 };
 
-	public ShellSortListSorter(Comparator comparator) {
+	public ShellsortListSorter(Comparator comparator) {
 		assert comparator != null : "Comparator can not be null  !!";
 		_comparator = comparator;
 	}

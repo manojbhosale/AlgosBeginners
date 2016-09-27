@@ -24,6 +24,13 @@ public class ArrayList implements List{
 		_initialCapacity = initialCapacity; 
 		clear();
 	}
+	
+	public ArrayList(Object[] arr){
+		
+		_initialCapacity = arr.length;
+		_array = arr;
+				
+	}
 
 
 

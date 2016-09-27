@@ -35,6 +35,30 @@ public class ListSorterCallCountingTest  extends TestCase{
 
 	}
 
+	public CallCountingComparator get_comparator() {
+		return _comparator;
+	}
+
+	public void set_comparator(CallCountingComparator _comparator) {
+		this._comparator = _comparator;
+	}
+
+	public static int getTestSize() {
+		return TEST_SIZE;
+	}
+
+	public List get_sortedArrayList() {
+		return _sortedArrayList;
+	}
+
+	public List get_reversedArrayList() {
+		return _reversedArrayList;
+	}
+
+	public List get_randomArrayList() {
+		return _randomArrayList;
+	}
+
 	public void testWorstCaseBubblesort() {
 		new BubblesortListSorter(_comparator).sort(_reversedArrayList);
 		reportCalls(_comparator.getCallCount());
@@ -79,7 +103,7 @@ public class ListSorterCallCountingTest  extends TestCase{
 		reportCalls(_comparator.getCallCount());
 	}
 
-	private void reportCalls(int callCount) {
+	public void reportCalls(int callCount) {
 		System.out.println(getName() + ": " + callCount + " calls");
 	}
 }

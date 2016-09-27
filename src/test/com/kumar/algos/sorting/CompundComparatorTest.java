@@ -1,5 +1,7 @@
-package main.com.kumar.algos.sorting;
+package test.com.kumar.algos.sorting;
 
+import main.com.kumar.algos.sorting.CompoundComparator;
+import main.com.kumar.algos.sorting.FixedComparator;
 import junit.framework.TestCase;
 
 public class CompundComparatorTest extends TestCase{

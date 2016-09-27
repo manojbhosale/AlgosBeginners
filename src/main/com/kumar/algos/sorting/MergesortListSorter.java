@@ -17,7 +17,7 @@ public class MergesortListSorter implements ListSorter {
 
 	@Override
 	public List sort(List list) {
-		return null;
+		return mergeSort(list, 0, list.size()-1);
 	}
 
 	private List mergeSort(List list, int startIndex, int endIndex) {
@@ -26,35 +26,51 @@ public class MergesortListSorter implements ListSorter {
 		List sortedSubList = new LinkedList();
 		if ((endIndex - startIndex) > 0) {
 			int size = (endIndex - startIndex) / 2;
-			left = mergeSort(list, startIndex, (startIndex + size) - 1);
-			right = mergeSort(list, (startIndex + size), endIndex);
+			left = mergeSort(list, startIndex, (startIndex + size));
+			right = mergeSort(list, (startIndex + size)+1, endIndex);
 
 			Iterator leftIter = left.iterator();
 			Iterator rightIter = right.iterator();
+			
 			leftIter.first();
 			rightIter.first();
-			Object leftVal = null;
-			Object rightVal = null;
 
-			leftVal = leftIter.current();
-			rightVal = rightIter.current();
 
 			while (true) {
 
-				if (_comparator.compare(leftVal, rightVal) <= 0 && !leftIter.isDone()) {
-					sortedSubList.add(leftVal);
-					leftIter.next();
-					if(!leftIter.isDone())
-						leftVal = leftIter.current();
-				} else if (_comparator.compare(leftVal, rightVal) >= 0 	&& !rightIter.isDone()) {
-					sortedSubList.add(rightVal);
-					rightIter.next();
-					if(!rightIter.isDone())
-						rightVal = rightIter.current();
-				} else {
+				if(leftIter.isDone() && rightIter.isDone()){
 					break;
 				}
+				
+				  /*  if (leftIter.isDone()) {
+						sortedSubList.add(rightIter.current());
+						rightIter.next();
+					} else if (rightIter.isDone()) {
+						sortedSubList.add(leftIter.current());
+						leftIter.next();
+					} else if (_comparator.compare(leftIter.current(),rightIter.current()) <= 0) {
+						sortedSubList.add(leftIter.current());
+						leftIter.next();
+					} else {
+						sortedSubList.add(rightIter.current());
+						rightIter.next();
+					}*/
+				
+				
+				if(rightIter.isDone() || (!leftIter.isDone() && _comparator.compare(leftIter.current(), rightIter.current()) <= 0) ){
+					sortedSubList.add(leftIter.current());
+					leftIter.next();
+					continue;
+				}
+				
+				if(leftIter.isDone() || (!rightIter.isDone() && _comparator.compare(leftIter.current(), rightIter.current()) > 0)){
+					sortedSubList.add(rightIter.current());
+					rightIter.next();
+					continue;
+				}
 
+				break;
+				
 			}
 			return sortedSubList;
 
